@@ -1,6 +1,7 @@
 *.tar.gz
 *.tar.xz
 *.zst
+*.part
 *.html
 pkg/
 src/
