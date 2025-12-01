@@ -8,7 +8,7 @@
 pkgname=discord-rolling
 _pkgname=Discord
 installname=discord
-pkgver=2025.11.30.21.00.07
+pkgver=2025.12.01.19.36.55
 pkgrel=1
 pkgdesc="All-in-one voice and text chat for gamers - Rolling package"
 arch=('x86_64')
@@ -21,7 +21,10 @@ optdepends=('libpulse: Pulseaudio support'
             'xdg-utils: Open files'
             'noto-fonts-cjk: Font for special characters such as /shrug face'
             'emoji-font: Fonts for emoji support')
-source=("discord-$pkgver.tar.gz::https://discord.com/api/download?platform=linux&format=tar.gz"
+
+timestamp=$(date +%Y.%m.%d.%H.%M.%S)
+
+source=("discord-$timestamp.tar.gz::https://discord.com/api/download?platform=linux&format=tar.gz"
         'LICENSE.html::https://discordapp.com/terms'
         'OSS-LICENSES.html::https://discordapp.com/licenses')
 sha256sums=('SKIP'
@@ -29,7 +32,7 @@ sha256sums=('SKIP'
             'SKIP')
 
 pkgver() {
-  date +%Y.%m.%d.%H.%M.%S
+  echo "$timestamp"
 }
 
 prepare() {
